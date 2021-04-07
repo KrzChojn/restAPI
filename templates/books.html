@@ -1,0 +1,12 @@
+<!doctype html>
+<title>Wypisywanie użytkowników</title>
+{% if lista_tytulow_unikalna|length > 0 %}
+  <h1>Tytuły w bazie</h1>
+  <ol>
+  {% for ksiazka in lista_tytulow_unikalna %}
+    <li><b>{{ksiazka}}</b></li>
+  {% endfor %}
+  </ol>
+{% else %}
+  <h1>Brak ksiazek!</h1>
+{% endif %}

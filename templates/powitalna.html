@@ -1,0 +1,30 @@
+<!doctype html>
+<title>Tytuły posortowane po roku publikacji</title>
+Mozesz wyswietlic liste ksiazek. Aby to zrobic wpisz: 
+ http://127.0.0.1:1234/books 
+<p>Aby wyswietlic liste ksiazek wg dat wpisz: 
+http://127.0.0.1:1234/books/sorted?sort=-published_date</p>
+<p>Aby wyswyietlic ksiazki z konkretnego roku wpisz: 
+http://127.0.0.1:1234/books/year?published_date=TUTAJWPISZROK np 
+http://127.0.0.1:1234/books/year?published_date=1985</p> 
+<p>Aby wyswietlic ksiazki danego autora wpisz: 
+http://127.0.0.1:1234/books/author?author="autor" 
+np: http://127.0.0.1:1234/books/author?author="Artur Dąbrowski"</p>
+<p>Aby wyswietlic dane dot. danej ksiazki wpisz: 
+http://127.0.0.1:1234/books/ID np.: 
+http://127.0.0.1:1234/books/8ef3-s6fixIC .</p> 
+<p>Aby wgrać nowe książki wpisz: 
+http://127.0.0.1:1234/wgraj i przygotuj link do bazy zapisanej w 
+JSON, np.: https://www.googleapis.com/books/v1/volumes?q=war . 
+Następnie kliknij przycisk na stronie</p>
+<p>Lista ID ponizej.</p>
+{% if slownikIdTitle|length > 0 %}
+  <h1>Lista ID</h1>
+  <ol>
+  {% for numerID, tytul in slownikIdTitle.items() %}
+    <li>{{numerID, tytul}}</li>
+  {% endfor %}
+  </ol>
+{% else %}
+  <h1>Brak ID!</h1>
+{% endif %}

@@ -1,0 +1,12 @@
+<!doctype html>
+<title>Wypisywanie użytkowników</title>
+{% if lista_uzytkownikow|length > 0 %}
+  <h1>Użytkownicy na liście</h1>
+  <ol>
+  {% for user in lista_uzytkownikow %}
+    <li>Użytkownik: <b>{{user}}</b></li>
+  {% endfor %}
+  </ol>
+{% else %}
+  <h1>Brak użytkowników!</h1>
+{% endif %}

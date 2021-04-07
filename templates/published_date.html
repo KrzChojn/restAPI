@@ -1,0 +1,12 @@
+<!doctype html>
+<title>Tytuły posortowane po roku publikacji</title>
+{% if tytulySorted|length > 0 %}
+  <h1>Tytuły w bazie</h1>
+  <ol>
+  {% for ksiazka_rok in tytulySorted %}
+    <li><b>{{ksiazka_rok}}</b></li>
+  {% endfor %}
+  </ol>
+{% else %}
+  <h1>Brak ksiazek!</h1>
+{% endif %}
